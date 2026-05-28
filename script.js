@@ -87,20 +87,6 @@ document.querySelectorAll('.btn-cta, .btn-contacto-cta').forEach(btn => {
     });
 });
 
-// Efecto hover en navegación
-document.querySelectorAll('.nav a').forEach(link => {
-    link.addEventListener('mouseenter', function() {
-        if (!this.classList.contains('btn-contacto')) {
-            this.style.color = '#00d4ff';
-        }
-    });
-    link.addEventListener('mouseleave', function() {
-        if (!this.classList.contains('btn-contacto')) {
-            this.style.color = '#a8b8cc';
-        }
-    });
-});
-
 // Paralax en hero
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;

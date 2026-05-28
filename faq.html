@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes - IoT Link</title>
+    <link rel="icon" href="imagenes/logoiot.ico" type="image/x-icon" sizes="192x192">
+    <link rel="shortcut icon" href="imagenes/logoiot.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="imagenes/logoiot.png">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .faq-section { padding: 100px 0; background: #f2f4f7; }
+        .faq-header { text-align: center; margin-bottom: 60px; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .faq-header h1 { font-size: 42px; color: #2C3E50; margin-bottom: 10px; }
+        .faq-grid { display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
+        .faq-item { background: transparent; border-radius: 14px; overflow: hidden; border: none; box-shadow: none; }
+        .faq-question { padding: 24px; cursor: pointer; background: transparent; display: flex; justify-content: space-between; align-items: center; transition: none; font-weight: 700; color: #2C3E50; }
+        .faq-question:hover { background: transparent; }
+        .faq-icon { font-size: 20px; transition: transform 0.3s ease; color: #2C3E50; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0; background: transparent; color: #3b3f47; line-height: 1.75; }
+        .faq-item.active .faq-answer { max-height: 500px; padding: 24px; background: transparent; }
+        .faq-tabs { text-align: center; margin-bottom: 40px; }
+        .faq-tab { display: inline-block; margin: 0 15px; padding: 10px 0; border-bottom: 2px solid transparent; cursor: pointer; color: #667488; font-weight: 700; transition: all 0.3s ease; }
+        .faq-tab.active { color: #2C3E50; border-bottom-color: #2C3E50; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center;">
+                    <img src="imagenes/logoiot.png" alt="IoTLink" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#soluciones">Soluciones</a></li>
+                    <li><a href="index.html#soporte">Soporte</a></li>
+                    <li><a href="contacto.html" class="btn-contacto">Contactar</a></li>
+                    <li><a href="https://app.iotlink.com.co/login" class="btn-contacto">Iniciar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-header">
+                <h1>Preguntas Frecuentes</h1>
+                <p style="font-size: 16px; color: #666; margin-top: 15px;">Encuentra respuestas a las preguntas más comunes sobre IoTLink</p>
+            </div>
+
+            <div class="faq-tabs">
+                <span class="faq-tab active" onclick="filterFAQ(event, 'general')">General</span>
+                <span class="faq-tab" onclick="filterFAQ(event, 'tecnica')">Técnica</span>
+                <span class="faq-tab" onclick="filterFAQ(event, 'soporte')">Soporte</span>
+                <span class="faq-tab" onclick="filterFAQ(event, 'pricing')">Pricing</span>
+            </div>
+
+            <div class="faq-grid" id="faqGrid">
+                <!-- GENERAL -->
+                <div class="faq-item general">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué es IoTLink?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        IoTLink es una plataforma de monitoreo, automatización y analítica IoT que permite a empresas conectar dispositivos, recopilar datos en tiempo real y recibir alertas inteligentes para optimizar operaciones.
+                    </div>
+                </div>
+
+                <div class="faq-item general">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cómo comenzar?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Regístrate en app.iotlink.com.co, elige un plan que se ajuste a tu negocio, conecta tus dispositivos y comienza a monitorear en tiempo real.
+                    </div>
+                </div>
+
+                <!-- TÉCNICA -->
+                <div class="faq-item tecnica">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué dispositivos soporta IoTLink?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Soportamos ESP32, Arduino, Raspberry Pi, sensores MQTT, ThingsBoard y cualquier dispositivo que pueda enviar datos por WiFi, Bluetooth o MQTT.
+                    </div>
+                </div>
+
+                <div class="faq-item tecnica">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Es seguro mi información?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sí. Usamos encriptación HTTPS/TLS, firewalls activos, backups automáticos y cumplimos con la Ley 1581 de Colombia. Realizamos auditorías de seguridad regularmente.
+                    </div>
+                </div>
+
+                <!-- SOPORTE -->
+                <div class="faq-item soporte">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Qué soporte ofrecen?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Ofrecemos soporte 24/7 por email, chat en vivo y portal de ayuda. Los planes profesionales incluyen soporte prioritario con respuesta en menos de 2 horas.
+                    </div>
+                </div>
+
+                <div class="faq-item soporte">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Hay garantía de disponibilidad?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sí, garantizamos 99.5% de uptime para todos los planes. Los planes empresariales incluyen SLA de 99.9% con compensación por incumplimiento.
+                    </div>
+                </div>
+
+                <!-- PRICING -->
+                <div class="faq-item pricing">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Cuál es el compromiso mínimo?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        No hay compromiso oculto: puedes ajustar o cancelar tu plan según las necesidades de tu empresa con al menos un ciclo de facturación de anticipación.
+                    </div>
+                </div>
+
+                <div class="faq-item pricing">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>¿Puedo cambiar de plan?</span>
+                        <span class="faq-icon">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sí, puedes cambiar de plan en cualquier momento. Los cambios se aplicarán al siguiente ciclo de facturación con prorrateo de diferencias.
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 60px; text-align: center;">
+                <h3 style="font-size: 22px; color: #2C3E50; margin-bottom: 20px;">¿No encontraste tu respuesta?</h3>
+                <a href="contacto.html" style="display: inline-block; background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%); color: white; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 600;">Contactar Soporte</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Filtrar por categoría por defecto al cargar
+        window.addEventListener('load', function() {
+            filterFAQDefault();
+        });
+
+        function filterFAQDefault() {
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (item.classList.contains('general')) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        function toggleFAQ(element) {
+            const item = element.parentElement;
+            item.classList.toggle('active');
+        }
+
+        function filterFAQ(evt, category) {
+            document.querySelectorAll('.faq-tab').forEach(tab => tab.classList.remove('active'));
+            evt.target.classList.add('active');
+
+            document.querySelectorAll('.faq-item').forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 IoT Link. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonios y Casos de Éxito - IoT Link</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .testimonios-section { padding: 100px 0; background: linear-gradient(180deg, #EBEBEB 0%, #E5E5E5 100%); }
+        .testimonios-header { text-align: center; margin-bottom: 60px; }
+        .testimonios-header h1 { font-size: 42px; color: #2C3E50; margin-bottom: 10px; }
+        .testimonios-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .testimonial-card { background: white; border-radius: 12px; padding: 30px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); transition: all 0.3s ease; }
+        .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.12); }
+        .testimonial-header { display: flex; gap: 15px; margin-bottom: 20px; }
+        .testimonial-logo { width: 50px; height: 50px; background: #E8E8E8; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 24px; }
+        .testimonial-info h4 { font-size: 16px; font-weight: 700; color: #2C3E50; margin-bottom: 3px; }
+        .testimonial-info p { font-size: 13px; color: #888; }
+        .testimonial-text { font-size: 15px; color: #555; font-style: italic; margin: 20px 0; line-height: 1.6; }
+        .testimonial-result { background: #f0f9ff; padding: 15px; border-radius: 8px; border-left: 4px solid #20A4FF; }
+        .testimonial-result strong { color: #20A4FF; }
+        .testimonial-stars { color: #FFB800; font-size: 14px; margin-bottom: 10px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html" style="display: flex; align-items: center;">
+                    <img src="imagenes/logoiot.png" alt="IoTLink" class="logo-img">
+                </a>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html#inicio">Inicio</a></li>
+                    <li><a href="index.html#soluciones">Soluciones</a></li>
+                    <li><a href="index.html#soporte">Soporte</a></li>
+                    <li><a href="contacto.html" class="btn-contacto">Contactar</a></li>
+                    <li><a href="https://app.iotlink.com.co/login" class="btn-contacto">Iniciar sesión</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="testimonios-section">
+        <div class="container">
+            <div class="testimonios-header">
+                <h1>Casos de Éxito IoTLink</h1>
+                <p style="font-size: 18px; color: #666; margin-top: 15px;">Empresas que transformaron su operación con IoTLink</p>
+            </div>
+
+            <div class="testimonios-grid">
+                <!-- TESTIMONIO 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-logo">🏭</div>
+                        <div class="testimonial-info">
+                            <h4>Industria Metalmecánica</h4>
+                            <p>Medellín, Colombia</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Con IoTLink redujimos el tiempo de detección de fallas de 4 horas a 15 minutos. Ahora somos más eficientes."</div>
+                    <div class="testimonial-result"><strong>+65%</strong> eficiencia operacional | <strong>-40%</strong> costos de mantenimiento</div>
+                </div>
+
+                <!-- TESTIMONIO 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-logo">🌡️</div>
+                        <div class="testimonial-info">
+                            <h4>Cadena de Frío</h4>
+                            <p>Bogotá, Colombia</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Monitoreo 24/7 de temperatura en tiempo real. Cero desperdicio de producto. Increíble diferencia."</div>
+                    <div class="testimonial-result"><strong>0%</strong> merma por temperatura | <strong>24/7</strong> alertas automáticas</div>
+                </div>
+
+                <!-- TESTIMONIO 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-logo">🏢</div>
+                        <div class="testimonial-info">
+                            <h4>Gestión Inmobiliaria</h4>
+                            <p>Cali, Colombia</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                    <div class="testimonial-text">"Control inteligente de energía en 50 propiedades. Ahorros significativos inmediatos desde el primer mes."</div>
+                    <div class="testimonial-result"><strong>-35%</strong> consumo energético | <strong>+80%</strong> satisfacción de inquilinos</div>
+                </div>
+            </div>
+
+            <div style="margin-top: 80px; text-align: center;">
+                <h3 style="font-size: 28px; color: #2C3E50; margin-bottom: 20px;">¿Quieres ser el próximo caso de éxito?</h3>
+                <a href="contacto.html" style="display: inline-block; background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%); color: white; padding: 14px 36px; border-radius: 8px; text-decoration: none; font-weight: 600;">Solicitar Demo Gratuita</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom" style="text-align: center;">
+                <p>&copy; 2026 IoT Link. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
