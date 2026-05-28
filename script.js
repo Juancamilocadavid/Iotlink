@@ -80,12 +80,7 @@ const animateHeroStats = () => {
     }
 };
 
-// Event listeners para botones
-document.querySelectorAll('.btn-cta, .btn-contacto-cta').forEach(btn => {
-    btn.addEventListener('click', () => {
-        alert('¡Gracias por tu interés! Nos pondremos en contacto pronto.');
-    });
-});
+
 
 // Paralax en hero
 window.addEventListener('scroll', () => {
