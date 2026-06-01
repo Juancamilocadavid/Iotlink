@@ -3,7 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - IoT Link</title>
+    <title>Contacto · IoT Link</title>
+    <meta name="description" content="Ponte en contacto con IoT Link. Te respondemos en menos de 2 horas. Soporte 24/7 desde Medellín, Colombia.">
+    <link rel="canonical" href="https://iotlink.com.co/contacto/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Contacto · IoT Link">
+    <meta property="og:description" content="Ponte en contacto con IoT Link. Te respondemos en menos de 2 horas. Soporte 24/7 desde Medellín, Colombia.">
+    <meta property="og:url" content="https://iotlink.com.co/contacto/">
+    <meta property="og:image" content="https://iotlink.com.co/imagenes/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="es_CO">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://iotlink.com.co/imagenes/og-image.png">
     <link rel="icon" href="/imagenes/logoiot.ico" type="image/x-icon" sizes="192x192">
     <link rel="shortcut icon" href="/imagenes/logoiot.ico" type="image/x-icon">
     <link rel="apple-touch-icon" href="/imagenes/logoiot.png">
@@ -30,8 +42,20 @@
         .info-card a { color: #20A4FF; text-decoration: none; font-weight: 600; }
         .info-card a:hover { text-decoration: underline; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
         .form-row .form-group { margin-bottom: 0; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-section { padding: 60px 0; }
+            .contact-header h1 { font-size: 32px; }
+            .contact-grid { grid-template-columns: 1fr; gap: 24px; }
+            .contact-form { padding: 28px 20px; }
+        }
+        @media (max-width: 480px) {
+            .form-row { grid-template-columns: 1fr; gap: 0; margin-bottom: 0; }
+            .form-row .form-group { margin-bottom: 24px; }
+        }
 
         /* Toast de notificación */
         .toast {
@@ -55,24 +79,7 @@
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="/" style="display: flex; align-items: center;">
-                    <img src="/imagenes/logoiot.png" alt="IoTLink" class="logo-img">
-                </a>
-            </div>
-            <nav class="nav">
-                <ul>
-                    <li><a href="/#inicio">Inicio</a></li>
-                    <li><a href="/#soluciones">Soluciones</a></li>
-                    <li><a href="/#soporte">Soporte</a></li>
-                    <li><a href="/contacto" class="btn-contacto">Contactar</a></li>
-                    <li><a href="https://app.iotlink.com.co/login" class="btn-contacto">Iniciar sesión</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="site-header"></div>
 
     <section class="contact-section">
         <div class="container">
@@ -86,6 +93,8 @@
                 <div class="contact-form">
                     <h2 style="font-size: 24px; color: #2C3E50; margin-bottom: 30px;">Envía tu Mensaje</h2>
                     <form id="contactForm">
+                        <!-- Honeypot anti-spam: oculto para humanos, lo rellenan los bots -->
+                        <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Nombre Completo *</label>
@@ -163,40 +172,9 @@
     <!-- Toast de notificación -->
     <div class="toast" id="toast"></div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <h4>IoT Link</h4>
-                    <p>Soluciones IoT innovadoras para tu negocio</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Navegación</h4>
-                    <ul>
-                        <li><a href="/#inicio">Inicio</a></li>
-                        <li><a href="/#nosotros">Nosotros</a></li>
-                        <li><a href="/#soluciones">Soluciones</a></li>
-                        <li><a href="/faq">FAQ</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="/privacidad">Política de Privacidad</a></li>
-                        <li><a href="/terminos">Términos y Condiciones</a></li>
-                        <li><a href="/cookies">Política de Cookies</a></li>
-                        <li><a href="/legal">Información Legal</a></li>
-                        <li><a href="/datos">Datos y Protección</a></li>
-                        <li><a href="/seguridad">Seguridad</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom" style="text-align: center;">
-                <p>&copy; 2026 IoT Link. Todos los derechos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <div id="site-footer"></div>
 
+    <script src="/components.js"></script>
     <script src="/script.js"></script>
     <script>
         const SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwyTly6i0WBUA6IUvVxI6ysGyILoqVIEz-CzNGkHHYdEsOcrwyuFQHm-BqsPof3E5k1/exec';
@@ -210,6 +188,13 @@
 
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
+
+            // Si el honeypot viene relleno, es un bot: cortamos en silencio.
+            if (document.getElementById('website').value) {
+                showToast('✅ Mensaje enviado. Te contactaremos pronto.', 'success');
+                this.reset();
+                return;
+            }
 
             const btn = document.getElementById('submitBtn');
             btn.disabled = true;

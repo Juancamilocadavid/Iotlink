@@ -46,21 +46,22 @@ const animateHeroStats = () => {
             if (entry.isIntersecting) {
                 stats.forEach(stat => {
                     const originalText = stat.textContent;
-                    const isNumber = /^\d+/.test(originalText);
-                    
-                    if (isNumber) {
-                        const numericValue = parseInt(originalText);
+                    const parsed = originalText.match(/^(\d+)(.*)$/);
+
+                    if (parsed) {
+                        const numericValue = parseInt(parsed[1], 10);
+                        const suffix = parsed[2]; // conserva "%", "+", etc.
                         let currentValue = 0;
                         const duration = 2000;
                         const startTime = Date.now();
-                        
+
                         const counter = setInterval(() => {
                             const elapsed = Date.now() - startTime;
                             const progress = Math.min(elapsed / duration, 1);
                             currentValue = Math.floor(numericValue * progress);
-                            
-                            stat.textContent = currentValue + '+';
-                            
+
+                            stat.textContent = currentValue + suffix;
+
                             if (progress === 1) {
                                 clearInterval(counter);
                                 stat.textContent = originalText;
