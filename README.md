@@ -23,6 +23,27 @@ var GA_ID    = '';              // ⬅️ PEGA AQUÍ tu ID de Google Analytics
 
 ---
 
+## 🧩 Páginas de soluciones (se generan, no se editan a mano)
+
+Las páginas `/soluciones/` y `/soluciones/<slug>/` salen de **una sola plantilla**:
+[`_herramientas/generar_soluciones.py`](_herramientas/generar_soluciones.py).
+Jekyll/GitHub Pages no publica carpetas que empiezan por `_`, así que el script no queda visible en el sitio.
+
+```bash
+# desde la raíz del repo (solo necesita Python 3, sin instalar nada)
+python3 _herramientas/generar_soluciones.py
+```
+
+- **Cambiar un texto o agregar una solución:** edita la lista `SOLUCIONES` al inicio del script y vuelve a correrlo.
+  Si los HTML de `soluciones/` se editan a mano, el script los sobrescribe.
+- **Captura del dashboard:** guarda la imagen como `imagenes/soluciones/<slug>.jpg` y vuelve a correr el script.
+  La landing la muestra sola; si no existe, queda un comentario HTML en su lugar.
+- **Si agregas una solución:** súmala también a `SOLUCIONES` en `components.js` (footer) y a `sitemap.xml`.
+  En el home, las tarjetas de `#soluciones` están escritas en el HTML (para que Google vea los enlaces).
+- Slugs actuales: `monitoreo-temperatura-humedad`, `monitoreo-nivel-tanques`, `rastreo-gps`, `automatizacion-dashboards`.
+
+---
+
 ## ✅ Lo que ya quedó hecho
 
 - [x] Header/footer unificados (se acabó el menú distinto en cada página).
@@ -35,6 +56,8 @@ var GA_ID    = '';              // ⬅️ PEGA AQUÍ tu ID de Google Analytics
 - [x] Datos estructurados JSON-LD: empresa (`Organization`) en todo el sitio y `FAQPage` en la página de FAQ → posibles resultados enriquecidos en Google.
 - [x] `robots.txt`, `sitemap.xml` y página `404.html`.
 - [x] Google Analytics **cableado** (solo falta pegar el ID, ver abajo).
+- [x] Una landing por solución (`/soluciones/...`) con datos estructurados `Service` y `BreadcrumbList`.
+- [x] Se quitaron las afirmaciones que no se podían sostener (testimonios, 24/7, SLA, certificaciones, auditorías).
 
 ---
 
@@ -76,8 +99,7 @@ Cuando tengas LinkedIn/Instagram, pásamelos y los agrego al footer y al JSON-LD
    Cada artículo atrae tráfico de Google a largo plazo.
 2. **Casos de éxito reales con números**: "Reducimos X% el tiempo de inactividad".
    Vale más que cualquier texto de marketing.
-3. **Convertir los casos de uso en páginas propias** (Industria 4.0, Smart Cities…)
-   para posicionar cada uno por separado.
+3. **Capturas reales del dashboard** en cada landing (`imagenes/soluciones/<slug>.jpg`).
 4. **Optimizar imágenes a WebP** para que el sitio cargue más rápido (Google premia la velocidad).
 
 > Cualquiera de estos puntos te los puedo implementar; solo pídemelo.
@@ -96,6 +118,8 @@ python -m http.server 8099
 
 ```
 index.html            # Home
+soluciones/           # GENERADO por _herramientas/generar_soluciones.py
+_herramientas/        # Scripts (no se publican)
 contacto/ faq/ ...    # Cada sección en su carpeta con index.html
 components.js          # Header + footer + WhatsApp + Analytics (FUENTE ÚNICA)
 script.js             # Animaciones y scroll suave

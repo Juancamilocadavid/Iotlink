@@ -28,9 +28,9 @@
         {"@type":"Question","name":"¿Qué es IoTLink?","acceptedAnswer":{"@type":"Answer","text":"IoTLink es una plataforma de monitoreo, automatización y analítica IoT que permite a empresas conectar dispositivos, recopilar datos en tiempo real y recibir alertas inteligentes para optimizar operaciones."}},
         {"@type":"Question","name":"¿Cómo comenzar?","acceptedAnswer":{"@type":"Answer","text":"Regístrate en app.iotlink.com.co, elige un plan que se ajuste a tu negocio, conecta tus dispositivos y comienza a monitorear en tiempo real."}},
         {"@type":"Question","name":"¿Qué dispositivos soporta IoTLink?","acceptedAnswer":{"@type":"Answer","text":"IoTLink soporta integración con dispositivos IoT, sensores, gateways y sistemas de automatización compatibles con protocolos estándar como MQTT, WiFi, Ethernet y APIs de comunicación, adaptándose a soluciones industriales, comerciales y tecnológicas de diferentes fabricantes."}},
-        {"@type":"Question","name":"¿Es seguro mi información?","acceptedAnswer":{"@type":"Answer","text":"Sí. Usamos encriptación HTTPS/TLS, firewalls activos, backups automáticos y cumplimos con la Ley 1581 de Colombia. Realizamos auditorías de seguridad regularmente."}},
-        {"@type":"Question","name":"¿Qué soporte ofrecen?","acceptedAnswer":{"@type":"Answer","text":"Ofrecemos soporte 24/7 por email, chat en vivo y portal de ayuda. Los planes profesionales incluyen soporte prioritario con respuesta en menos de 2 horas."}},
-        {"@type":"Question","name":"¿Hay garantía de disponibilidad?","acceptedAnswer":{"@type":"Answer","text":"Sí, garantizamos 99.5% de uptime para todos los planes. Los planes empresariales incluyen SLA de 99.9% con compensación por incumplimiento."}},
+        {"@type":"Question","name":"¿Es seguro mi información?","acceptedAnswer":{"@type":"Answer","text":"Sí. La conexión entre tus equipos, la plataforma y tu navegador va cifrada con HTTPS/TLS. Cada persona entra con su propio usuario y solo ve lo que le corresponde (acceso por roles), y tratamos los datos personales según la Ley 1581 de Colombia."}},
+        {"@type":"Question","name":"¿Qué soporte ofrecen?","acceptedAnswer":{"@type":"Answer","text":"Te atendemos por WhatsApp y teléfono (+57 324 652 6040) y por correo (contacto@iotlink.com.co y proyectos@iotlink.com.co). Las alertas de tus sensores no dependen de nosotros: llegan solas, a cualquier hora."}},
+        {"@type":"Question","name":"¿Qué pasa si la plataforma se cae?","acceptedAnswer":{"@type":"Answer","text":"Monitoreamos la plataforma para detectar caídas y te avisamos con anticipación cuando hay mantenimientos programados. No ofrecemos un SLA con un porcentaje de disponibilidad garantizado."}},
         {"@type":"Question","name":"¿Cuál es el compromiso mínimo?","acceptedAnswer":{"@type":"Answer","text":"No hay compromiso oculto: puedes ajustar o cancelar tu plan según las necesidades de tu empresa con al menos un ciclo de facturación de anticipación."}},
         {"@type":"Question","name":"¿Puedo cambiar de plan?","acceptedAnswer":{"@type":"Answer","text":"Sí, puedes cambiar de plan en cualquier momento. Los cambios se aplicarán al siguiente ciclo de facturación con prorrateo de diferencias."}}
       ]
@@ -52,6 +52,12 @@
         .faq-tab { display: inline-block; margin: 0 15px; padding: 10px 0; border-bottom: 2px solid transparent; cursor: pointer; color: #667488; font-weight: 700; transition: all 0.3s ease; }
         .faq-tab.active { color: #2C3E50; border-bottom-color: #2C3E50; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        @media (max-width: 768px) {
+            .faq-section { padding: 60px 0; }
+            .faq-header h1 { font-size: 32px; }
+            .faq-grid { grid-template-columns: 1fr; gap: 12px; }
+            .faq-tab { margin: 0 8px; }
+        }
     </style>
 </head>
 <body>
@@ -110,7 +116,7 @@
                         <span class="faq-icon">▼</span>
                     </div>
                     <div class="faq-answer">
-                        Sí. Usamos encriptación HTTPS/TLS, firewalls activos, backups automáticos y cumplimos con la Ley 1581 de Colombia. Realizamos auditorías de seguridad regularmente.
+                        Sí. La conexión entre tus equipos, la plataforma y tu navegador va cifrada con HTTPS/TLS. Cada persona entra con su propio usuario y solo ve lo que le corresponde (acceso por roles), y tratamos los datos personales según la Ley 1581 de Colombia.
                     </div>
                 </div>
 
@@ -121,17 +127,17 @@
                         <span class="faq-icon">▼</span>
                     </div>
                     <div class="faq-answer">
-                        Ofrecemos soporte 24/7 por email, chat en vivo y portal de ayuda. Los planes profesionales incluyen soporte prioritario con respuesta en menos de 2 horas.
+                        Te atendemos por WhatsApp y teléfono (+57 324 652 6040) y por correo (contacto@iotlink.com.co y proyectos@iotlink.com.co). Las alertas de tus sensores no dependen de nosotros: llegan solas, a cualquier hora.
                     </div>
                 </div>
 
                 <div class="faq-item soporte">
                     <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>¿Hay garantía de disponibilidad?</span>
+                        <span>¿Qué pasa si la plataforma se cae?</span>
                         <span class="faq-icon">▼</span>
                     </div>
                     <div class="faq-answer">
-                        Sí, garantizamos 99.5% de uptime para todos los planes. Los planes empresariales incluyen SLA de 99.9% con compensación por incumplimiento.
+                        Monitoreamos la plataforma para detectar caídas y te avisamos con anticipación cuando hay mantenimientos programados. No ofrecemos un SLA con un porcentaje de disponibilidad garantizado.
                     </div>
                 </div>
 

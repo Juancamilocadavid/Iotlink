@@ -26,23 +26,32 @@
     function sec(hash) { return isHome ? hash : '/' + hash; }
 
     // ¿La ruta actual coincide con este enlace? (estado activo)
-    function active(match) {
+    // prefix = true: también activo en las subpáginas (/soluciones/...).
+    function active(match, prefix) {
         if (!match) return false;
         var p = path.replace(/\/$/, '');
         var m = match.replace(/\/$/, '');
-        return p === m;
+        return p === m || (prefix && p.indexOf(m + '/') === 0);
     }
+
+    // Soluciones (mismo orden que _herramientas/generar_soluciones.py)
+    var SOLUCIONES = [
+        { label: 'Temperatura y humedad', href: '/soluciones/monitoreo-temperatura-humedad/' },
+        { label: 'Nivel de tanques',      href: '/soluciones/monitoreo-nivel-tanques/' },
+        { label: 'Rastreo GPS',           href: '/soluciones/rastreo-gps/' },
+        { label: 'Automatización y dashboards', href: '/soluciones/automatizacion-dashboards/' }
+    ];
 
     var navItems = [
         { label: 'Inicio',     href: isHome ? '#inicio' : '/', match: isHome ? null : '/' },
         { label: 'Nosotros',   href: sec('#nosotros'),         match: null },
-        { label: 'Soluciones', href: sec('#soluciones'),       match: null },
+        { label: 'Soluciones', href: '/soluciones/',           match: '/soluciones', prefix: true },
         { label: 'Soporte',    href: sec('#soporte'),          match: null },
         { label: 'FAQ',        href: '/faq',                   match: '/faq' }
     ];
 
     var navLinks = navItems.map(function (i) {
-        var cls = active(i.match) ? ' class="active" aria-current="page"' : '';
+        var cls = active(i.match, i.prefix) ? ' class="active" aria-current="page"' : '';
         return '<li><a href="' + i.href + '"' + cls + '>' + i.label + '</a></li>';
     }).join('\n                    ');
 
@@ -75,23 +84,31 @@
             '<div class="footer-grid">' +
                 '<div class="footer-col">' +
                     '<h4>IoT Link</h4>' +
-                    '<p>Soluciones IoT innovadoras para tu negocio</p>' +
+                    '<p>Soluciones IoT para empresas, desde Medellín, Colombia.</p>' +
                 '</div>' +
                 '<div class="footer-col">' +
                     '<h4>Navegación</h4>' +
                     '<ul>' +
                         '<li><a href="' + sec('#inicio') + '">Inicio</a></li>' +
                         '<li><a href="' + sec('#nosotros') + '">Nosotros</a></li>' +
-                        '<li><a href="' + sec('#soluciones') + '">Soluciones</a></li>' +
+                        '<li><a href="/soluciones/">Soluciones</a></li>' +
                         '<li><a href="' + sec('#soporte') + '">Soporte</a></li>' +
                         '<li><a href="/faq">FAQ</a></li>' +
-                        '<li><a href="/testimonios">Testimonios</a></li>' +
+                    '</ul>' +
+                '</div>' +
+                '<div class="footer-col">' +
+                    '<h4>Soluciones</h4>' +
+                    '<ul>' +
+                        SOLUCIONES.map(function (s) {
+                            return '<li><a href="' + s.href + '">' + s.label + '</a></li>';
+                        }).join('') +
                     '</ul>' +
                 '</div>' +
                 '<div class="footer-col">' +
                     '<h4>Contacto</h4>' +
                     '<p class="footer-contact-text"><strong>Email:</strong> <a href="mailto:contacto@iotlink.com.co">contacto@iotlink.com.co</a></p>' +
                     '<p class="footer-contact-text"><strong>Proyectos:</strong> <a href="mailto:proyectos@iotlink.com.co">proyectos@iotlink.com.co</a></p>' +
+                    '<p class="footer-contact-text"><strong>Teléfono / WhatsApp:</strong> <a href="tel:+573246526040">+57 324 652 6040</a></p>' +
                     '<a href="/contacto" class="footer-contact-btn">Enviar Mensaje</a>' +
                 '</div>' +
                 '<div class="footer-col">' +
@@ -121,8 +138,8 @@
     // Botón flotante de contacto (WhatsApp si hay número, si no al formulario)
     var floatHref, floatIcon, floatLabel;
     if (WHATSAPP) {
-        floatHref = 'https://wa.me/' + WHATSAPP + '?text=' +
-            encodeURIComponent('Hola, me interesa una demo de IoT Link.');
+        var waTexto = document.body.dataset.wa || 'Hola, me interesa una demo de IoT Link.';
+        floatHref = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(waTexto);
         floatIcon = '💬';
         floatLabel = 'WhatsApp';
     } else {
@@ -147,7 +164,7 @@
         "name": "IoT Link",
         "url": "https://iotlink.com.co",
         "logo": "https://iotlink.com.co/imagenes/iotlink-logo.png",
-        "description": "Soluciones IoT para monitoreo, automatización y analítica en tiempo real para empresas e industria.",
+        "description": "Soluciones IoT en Medellín, Colombia: monitoreo de temperatura y humedad, monitoreo de nivel de tanques, rastreo GPS de vehículos y activos, y automatización con dashboards a medida.",
         "email": "contacto@iotlink.com.co",
         "telephone": "+57 324 652 6040",
         "address": {
