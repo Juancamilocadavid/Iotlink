@@ -25,14 +25,70 @@
       "@context": "https://schema.org",
       "@type": "FAQPage",
       "mainEntity": [
-        {"@type":"Question","name":"¿Qué es IoTLink?","acceptedAnswer":{"@type":"Answer","text":"IoTLink es una plataforma de monitoreo, automatización y analítica IoT que permite a empresas conectar dispositivos, recopilar datos en tiempo real y recibir alertas inteligentes para optimizar operaciones."}},
-        {"@type":"Question","name":"¿Cómo comenzar?","acceptedAnswer":{"@type":"Answer","text":"Regístrate en app.iotlink.com.co, elige un plan que se ajuste a tu negocio, conecta tus dispositivos y comienza a monitorear en tiempo real."}},
-        {"@type":"Question","name":"¿Qué dispositivos soporta IoTLink?","acceptedAnswer":{"@type":"Answer","text":"IoTLink soporta integración con dispositivos IoT, sensores, gateways y sistemas de automatización compatibles con protocolos estándar como MQTT, WiFi, Ethernet y APIs de comunicación, adaptándose a soluciones industriales, comerciales y tecnológicas de diferentes fabricantes."}},
-        {"@type":"Question","name":"¿Es seguro mi información?","acceptedAnswer":{"@type":"Answer","text":"Sí. La conexión entre tus equipos, la plataforma y tu navegador va cifrada con HTTPS/TLS. Cada persona entra con su propio usuario y solo ve lo que le corresponde (acceso por roles), y tratamos los datos personales según la Ley 1581 de Colombia."}},
-        {"@type":"Question","name":"¿Qué soporte ofrecen?","acceptedAnswer":{"@type":"Answer","text":"Te atendemos por WhatsApp y teléfono (+57 324 652 6040) y por correo (contacto@iotlink.com.co y proyectos@iotlink.com.co). Las alertas de tus sensores no dependen de nosotros: llegan solas, a cualquier hora."}},
-        {"@type":"Question","name":"¿Qué pasa si la plataforma se cae?","acceptedAnswer":{"@type":"Answer","text":"Monitoreamos la plataforma para detectar caídas y te avisamos con anticipación cuando hay mantenimientos programados. No ofrecemos un SLA con un porcentaje de disponibilidad garantizado."}},
-        {"@type":"Question","name":"¿Cuál es el compromiso mínimo?","acceptedAnswer":{"@type":"Answer","text":"No hay compromiso oculto: puedes ajustar o cancelar tu plan según las necesidades de tu empresa con al menos un ciclo de facturación de anticipación."}},
-        {"@type":"Question","name":"¿Puedo cambiar de plan?","acceptedAnswer":{"@type":"Answer","text":"Sí, puedes cambiar de plan en cualquier momento. Los cambios se aplicarán al siguiente ciclo de facturación con prorrateo de diferencias."}}
+        {
+          "@type": "Question",
+          "name": "¿Qué es IoT Link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IoT Link conecta los sensores y equipos de tu empresa a una plataforma en la nube para que veas tu operación en línea y recibas alertas. Ofrecemos monitoreo de temperatura y humedad, monitoreo de nivel de tanques, rastreo GPS de vehículos y activos, y automatización con dashboards a medida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo comenzar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Escríbenos por WhatsApp al +57 324 652 6040 o desde la página de contacto. Revisamos qué necesitas, te enviamos la cotización y, si te sirve, instalamos los sensores y configuramos tu tablero."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué dispositivos soporta IoT Link?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "IoT Link soporta integración con dispositivos IoT, sensores, gateways y sistemas de automatización compatibles con protocolos estándar como MQTT, WiFi, Ethernet y APIs de comunicación. La plataforma se adapta a soluciones industriales, comerciales y tecnológicas de diferentes fabricantes."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es segura mi información?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "La conexión entre tu navegador y la plataforma va cifrada con HTTPS/TLS. Cada persona entra con su propio usuario y solo ve lo que le corresponde (acceso por roles), y tratamos los datos personales según la Ley 1581 de Colombia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué soporte ofrecen?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Te atendemos por WhatsApp y teléfono (+57 324 652 6040) y por correo (contacto@iotlink.com.co y proyectos@iotlink.com.co). Las alertas de tus sensores no dependen de nosotros: llegan solas, a cualquier hora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué pasa si la plataforma se cae?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Monitoreamos la plataforma para detectar caídas y te avisamos con anticipación cuando hay mantenimientos programados. No ofrecemos un SLA con un porcentaje de disponibilidad garantizado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuánto cuesta?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Se paga una mensualidad según la cantidad de sensores o equipos conectados. Cotiza por WhatsApp y te decimos cuánto sería para tu caso."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuál es el compromiso mínimo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puedes ajustar o cancelar el servicio según las necesidades de tu empresa, avisando con al menos un ciclo de facturación de anticipación."
+          }
+        }
       ]
     }
     </script>
@@ -42,14 +98,14 @@
         .faq-header h1 { font-size: 42px; color: #2C3E50; margin-bottom: 10px; }
         .faq-grid { display: grid; grid-template-columns: repeat(2, minmax(260px, 1fr)); gap: 30px; max-width: 1000px; margin: 0 auto; }
         .faq-item { background: transparent; border-radius: 14px; overflow: hidden; border: none; box-shadow: none; }
-        .faq-question { padding: 24px; cursor: pointer; background: transparent; display: flex; justify-content: space-between; align-items: center; transition: none; font-weight: 700; color: #2C3E50; }
+        .faq-question { width: 100%; border: none; font: inherit; font-size: 16px; text-align: left; gap: 12px; padding: 24px; cursor: pointer; background: transparent; display: flex; justify-content: space-between; align-items: center; transition: none; font-weight: 700; color: #2C3E50; }
         .faq-question:hover { background: transparent; }
         .faq-icon { font-size: 20px; transition: transform 0.3s ease; color: #2C3E50; }
         .faq-item.active .faq-icon { transform: rotate(180deg); }
         .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0; background: transparent; color: #3b3f47; line-height: 1.75; }
         .faq-item.active .faq-answer { max-height: 500px; padding: 24px; background: transparent; }
         .faq-tabs { text-align: center; margin-bottom: 40px; }
-        .faq-tab { display: inline-block; margin: 0 15px; padding: 10px 0; border-bottom: 2px solid transparent; cursor: pointer; color: #667488; font-weight: 700; transition: all 0.3s ease; }
+        .faq-tab { display: inline-block; margin: 0 15px; padding: 10px 0; border: none; border-bottom: 2px solid transparent; background: transparent; font: inherit; cursor: pointer; color: #4f5b6b; font-weight: 700; transition: all 0.3s ease; }
         .faq-tab.active { color: #2C3E50; border-bottom-color: #2C3E50; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         @media (max-width: 768px) {
@@ -70,95 +126,84 @@
                 <p style="font-size: 16px; color: #666; margin-top: 15px;">Encuentra respuestas a las preguntas más comunes sobre IoTLink</p>
             </div>
 
-            <div class="faq-tabs">
-                <span class="faq-tab active" onclick="filterFAQ(event, 'general')">General</span>
-                <span class="faq-tab" onclick="filterFAQ(event, 'tecnica')">Técnica</span>
-                <span class="faq-tab" onclick="filterFAQ(event, 'soporte')">Soporte</span>
-                <span class="faq-tab" onclick="filterFAQ(event, 'pricing')">Pricing</span>
+            <div class="faq-tabs" role="group" aria-label="Categorías de preguntas">
+                <button type="button" class="faq-tab active" data-cat="general" aria-pressed="true">General</button>
+                <button type="button" class="faq-tab" data-cat="tecnica" aria-pressed="false">Técnica</button>
+                <button type="button" class="faq-tab" data-cat="soporte" aria-pressed="false">Soporte</button>
+                <button type="button" class="faq-tab" data-cat="precios" aria-pressed="false">Precios</button>
             </div>
 
             <div class="faq-grid" id="faqGrid">
-                <!-- GENERAL -->
                 <div class="faq-item general">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>¿Qué es IoTLink?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        IoTLink es una plataforma de monitoreo, automatización y analítica IoT que permite a empresas conectar dispositivos, recopilar datos en tiempo real y recibir alertas inteligentes para optimizar operaciones.
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-r0" id="faq-p0">
+                        <span>¿Qué es IoT Link?</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq-r0" role="region" aria-labelledby="faq-p0">
+                        IoT Link conecta los sensores y equipos de tu empresa a una plataforma en la nube para que veas tu operación en línea y recibas alertas. Ofrecemos monitoreo de temperatura y humedad, monitoreo de nivel de tanques, rastreo GPS de vehículos y activos, y automatización con dashboards a medida.
                     </div>
                 </div>
-
                 <div class="faq-item general">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-r1" id="faq-p1">
                         <span>¿Cómo comenzar?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Regístrate en app.iotlink.com.co, elige un plan que se ajuste a tu negocio, conecta tus dispositivos y comienza a monitorear en tiempo real.
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq-r1" role="region" aria-labelledby="faq-p1">
+                        Escríbenos por WhatsApp al +57 324 652 6040 o desde la página de contacto. Revisamos qué necesitas, te enviamos la cotización y, si te sirve, instalamos los sensores y configuramos tu tablero.
                     </div>
                 </div>
-
-                <!-- TÉCNICA -->
                 <div class="faq-item tecnica">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>¿Qué dispositivos soporta IoTLink?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        IoTLink soporta integración con dispositivos IoT, sensores, gateways y sistemas de automatización compatibles con protocolos estándar como MQTT, WiFi, Ethernet y APIs de comunicación.Nuestra plataforma está diseñada para adaptarse a soluciones industriales, comerciales y tecnológicas de diferentes fabricantes.
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-r2" id="faq-p2">
+                        <span>¿Qué dispositivos soporta IoT Link?</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq-r2" role="region" aria-labelledby="faq-p2">
+                        IoT Link soporta integración con dispositivos IoT, sensores, gateways y sistemas de automatización compatibles con protocolos estándar como MQTT, WiFi, Ethernet y APIs de comunicación. La plataforma se adapta a soluciones industriales, comerciales y tecnológicas de diferentes fabricantes.
                     </div>
                 </div>
-
                 <div class="faq-item tecnica">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>¿Es seguro mi información?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Sí. La conexión entre tus equipos, la plataforma y tu navegador va cifrada con HTTPS/TLS. Cada persona entra con su propio usuario y solo ve lo que le corresponde (acceso por roles), y tratamos los datos personales según la Ley 1581 de Colombia.
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-r3" id="faq-p3">
+                        <span>¿Es segura mi información?</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq-r3" role="region" aria-labelledby="faq-p3">
+                        La conexión entre tu navegador y la plataforma va cifrada con HTTPS/TLS. Cada persona entra con su propio usuario y solo ve lo que le corresponde (acceso por roles), y tratamos los datos personales según la Ley 1581 de Colombia.
                     </div>
                 </div>
-
-                <!-- SOPORTE -->
                 <div class="faq-item soporte">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-r4" id="faq-p4">
                         <span>¿Qué soporte ofrecen?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq-r4" role="region" aria-labelledby="faq-p4">
                         Te atendemos por WhatsApp y teléfono (+57 324 652 6040) y por correo (contacto@iotlink.com.co y proyectos@iotlink.com.co). Las alertas de tus sensores no dependen de nosotros: llegan solas, a cualquier hora.
                     </div>
                 </div>
-
                 <div class="faq-item soporte">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-r5" id="faq-p5">
                         <span>¿Qué pasa si la plataforma se cae?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq-r5" role="region" aria-labelledby="faq-p5">
                         Monitoreamos la plataforma para detectar caídas y te avisamos con anticipación cuando hay mantenimientos programados. No ofrecemos un SLA con un porcentaje de disponibilidad garantizado.
                     </div>
                 </div>
-
-                <!-- PRICING -->
-                <div class="faq-item pricing">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>¿Cuál es el compromiso mínimo?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        No hay compromiso oculto: puedes ajustar o cancelar tu plan según las necesidades de tu empresa con al menos un ciclo de facturación de anticipación.
+                <div class="faq-item precios">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-r6" id="faq-p6">
+                        <span>¿Cuánto cuesta?</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq-r6" role="region" aria-labelledby="faq-p6">
+                        Se paga una mensualidad según la cantidad de sensores o equipos conectados. Cotiza por WhatsApp y te decimos cuánto sería para tu caso.
                     </div>
                 </div>
-
-                <div class="faq-item pricing">
-                    <div class="faq-question" onclick="toggleFAQ(this)">
-                        <span>¿Puedo cambiar de plan?</span>
-                        <span class="faq-icon">▼</span>
-                    </div>
-                    <div class="faq-answer">
-                        Sí, puedes cambiar de plan en cualquier momento. Los cambios se aplicarán al siguiente ciclo de facturación con prorrateo de diferencias.
+                <div class="faq-item precios">
+                    <button type="button" class="faq-question" aria-expanded="false" aria-controls="faq-r7" id="faq-p7">
+                        <span>¿Cuál es el compromiso mínimo?</span>
+                        <span class="faq-icon" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq-r7" role="region" aria-labelledby="faq-p7">
+                        Puedes ajustar o cancelar el servicio según las necesidades de tu empresa, avisando con al menos un ciclo de facturación de anticipación.
                     </div>
                 </div>
             </div>
@@ -171,38 +216,29 @@
     </section>
 
     <script>
-        // Filtrar por categoría por defecto al cargar
-        window.addEventListener('load', function() {
-            filterFAQDefault();
+        // Abrir / cerrar una respuesta (botones: funcionan con mouse y teclado)
+        document.querySelectorAll('.faq-question').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+                var abierto = btn.parentElement.classList.toggle('active');
+                btn.setAttribute('aria-expanded', String(abierto));
+            });
         });
 
-        function filterFAQDefault() {
-            document.querySelectorAll('.faq-item').forEach(item => {
-                if (item.classList.contains('general')) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
+        // Filtrar por categoría
+        function filtrar(categoria) {
+            document.querySelectorAll('.faq-tab').forEach(function (t) {
+                var activa = t.dataset.cat === categoria;
+                t.classList.toggle('active', activa);
+                t.setAttribute('aria-pressed', String(activa));
+            });
+            document.querySelectorAll('.faq-item').forEach(function (item) {
+                item.style.display = item.classList.contains(categoria) ? 'block' : 'none';
             });
         }
-
-        function toggleFAQ(element) {
-            const item = element.parentElement;
-            item.classList.toggle('active');
-        }
-
-        function filterFAQ(evt, category) {
-            document.querySelectorAll('.faq-tab').forEach(tab => tab.classList.remove('active'));
-            evt.target.classList.add('active');
-
-            document.querySelectorAll('.faq-item').forEach(item => {
-                if (category === 'all' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                } else {
-                    item.style.display = 'none';
-                }
-            });
-        }
+        document.querySelectorAll('.faq-tab').forEach(function (t) {
+            t.addEventListener('click', function () { filtrar(t.dataset.cat); });
+        });
+        filtrar('general');
     </script>
 
     <div id="site-footer"></div>

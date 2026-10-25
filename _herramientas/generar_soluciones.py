@@ -38,7 +38,7 @@ SOLUCIONES = [
         "slug": "monitoreo-temperatura-humedad",
         "nombre": "Monitoreo de temperatura y humedad",
         "corto": "Temperatura y humedad",
-        "icono": "🌡️",
+        "icono": "termometro",
         "icono_clase": "icon-connectivity",
         "resumen": "Cuartos fríos, neveras, bodegas de café y cadena de frío.",
         "title": "Monitoreo de temperatura y humedad en Medellín | IoT Link",
@@ -75,7 +75,7 @@ SOLUCIONES = [
         "slug": "monitoreo-nivel-tanques",
         "nombre": "Monitoreo de nivel de tanques",
         "corto": "Nivel de tanques",
-        "icono": "🛢️",
+        "icono": "tanque",
         "icono_clase": "icon-analytics",
         "resumen": "Agua, combustible y químicos, sin tener que ir a revisar.",
         "title": "Monitoreo de nivel de tanques en Medellín | IoT Link",
@@ -112,7 +112,7 @@ SOLUCIONES = [
         "slug": "rastreo-gps",
         "nombre": "Rastreo GPS de vehículos y activos",
         "corto": "Rastreo GPS",
-        "icono": "📍",
+        "icono": "gps",
         "icono_clase": "icon-security",
         "resumen": "Ubicación en tiempo real, historial de recorridos y geocercas.",
         "title": "Rastreo GPS de vehículos y activos en Medellín | IoT Link",
@@ -148,7 +148,7 @@ SOLUCIONES = [
         "slug": "automatizacion-dashboards",
         "nombre": "Automatización y dashboards a medida",
         "corto": "Automatización y dashboards",
-        "icono": "⚙️",
+        "icono": "automatizacion",
         "icono_clase": "icon-automation",
         "resumen": "Control remoto de equipos, reglas automáticas y tableros por proceso.",
         "title": "Automatización y dashboards IoT en Medellín | IoT Link",
@@ -262,7 +262,7 @@ def breadcrumb_ld(items):
 def tarjeta(s):
     return f"""
                 <a class="solucion-card" href="/soluciones/{s['slug']}/">
-                    <div class="solucion-icon {s['icono_clase']}">{s['icono']}</div>
+                    <div class="solucion-icon {s['icono_clase']}" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-{s['icono']}"/></svg></div>
                     <h3>{e(s['nombre'])}</h3>
                     <p>{e(s['resumen'])}</p>
                     <span class="solucion-link">Ver solución →</span>

@@ -47,17 +47,17 @@
         <div class="container">
             <div class="hero-cards beneficios">
                 <div class="hero-card">
-                    <div class="beneficio-icon">🔔</div>
+                    <div class="beneficio-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-campana"/></svg></div>
                     <div class="card-text">Alertas al instante</div>
                     <p class="card-desc">Te llega una alerta cuando un valor se sale del rango que definas.</p>
                 </div>
                 <div class="hero-card">
-                    <div class="beneficio-icon">📊</div>
+                    <div class="beneficio-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-tablero"/></svg></div>
                     <div class="card-text">Todo en un tablero</div>
                     <p class="card-desc">Tus sensores y equipos en un solo lugar, desde el celular o el computador.</p>
                 </div>
                 <div class="hero-card">
-                    <div class="beneficio-icon">📍</div>
+                    <div class="beneficio-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-herramienta"/></svg></div>
                     <div class="card-text">Instalación local</div>
                     <p class="card-desc">Somos un equipo en Medellín: instalamos en tu sitio y dejamos todo funcionando.</p>
                 </div>
@@ -66,31 +66,31 @@
     </section>
 
     <!-- SOLUCIONES SECTION -->
-    <section class="soluciones" id="soluciones">
+    <section class="soluciones fondo-foto" id="soluciones">
         <div class="container">
             <h2>Nuestras soluciones</h2>
             <p class="seccion-intro">Cuatro soluciones concretas, listas para instalar en tu empresa.</p>
             <div class="soluciones-grid">
                 <a class="solucion-card" href="/soluciones/monitoreo-temperatura-humedad/">
-                    <div class="solucion-icon icon-connectivity">🌡️</div>
+                    <div class="solucion-icon icon-connectivity" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-termometro"/></svg></div>
                     <h3>Monitoreo de temperatura y humedad</h3>
                     <p>Cuartos fríos, neveras, bodegas de café y cadena de frío.</p>
                     <span class="solucion-link">Ver solución →</span>
                 </a>
                 <a class="solucion-card" href="/soluciones/monitoreo-nivel-tanques/">
-                    <div class="solucion-icon icon-analytics">🛢️</div>
+                    <div class="solucion-icon icon-analytics" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-tanque"/></svg></div>
                     <h3>Monitoreo de nivel de tanques</h3>
                     <p>Agua, combustible y químicos, sin tener que ir a revisar.</p>
                     <span class="solucion-link">Ver solución →</span>
                 </a>
                 <a class="solucion-card" href="/soluciones/rastreo-gps/">
-                    <div class="solucion-icon icon-security">📍</div>
+                    <div class="solucion-icon icon-security" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-gps"/></svg></div>
                     <h3>Rastreo GPS de vehículos y activos</h3>
                     <p>Ubicación en tiempo real, historial de recorridos y geocercas.</p>
                     <span class="solucion-link">Ver solución →</span>
                 </a>
                 <a class="solucion-card" href="/soluciones/automatizacion-dashboards/">
-                    <div class="solucion-icon icon-automation">⚙️</div>
+                    <div class="solucion-icon icon-automation" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-automatizacion"/></svg></div>
                     <h3>Automatización y dashboards a medida</h3>
                     <p>Control remoto de equipos, reglas automáticas y tableros por proceso.</p>
                     <span class="solucion-link">Ver solución →</span>
@@ -132,7 +132,7 @@
     </section>
 
     <!-- SECTORES SECTION -->
-    <section class="casos sectores" id="sectores">
+    <section class="casos sectores fondo-foto" id="sectores">
         <div class="container">
             <h2>Dónde aplicamos IoT</h2>
             <div class="casos-grid">
@@ -173,24 +173,29 @@
     </section>
 
     <!-- ACERCA DE SECTION -->
-    <section class="nosotros" id="nosotros">
+    <section class="nosotros fondo-foto" id="nosotros">
         <div class="container">
             <h2>Sobre IoT Link</h2>
             <div class="nosotros-content una-columna">
-                <div class="nosotros-text">
+                <div class="nosotros-text nosotros-destacado">
                     <p>
-                        Somos un equipo en Medellín que conecta los sensores y equipos de las empresas para que puedan ver y controlar su operación en línea. Hacemos el diagnóstico, instalamos el hardware, configuramos la plataforma y te acompañamos después.
+                        Somos un <strong>equipo en Medellín</strong> que conecta los sensores y equipos de las empresas para que puedan <strong>ver y controlar su operación en línea</strong>. Hacemos el diagnóstico, instalamos el hardware, configuramos la plataforma y <strong>te acompañamos después</strong>.
                     </p>
                     <p>
-                        La plataforma está en la nube y está construida sobre ThingsBoard. No compras software: pagas una mensualidad según la cantidad de sensores o equipos conectados.
+                        La plataforma está <strong>en la nube</strong> y está construida sobre ThingsBoard. No compras software: <strong>pagas una mensualidad</strong> según la cantidad de sensores o equipos conectados.
                     </p>
+                    <div class="nosotros-puntos">
+                        <div>Instalación en sitio</div>
+                        <div>Plataforma en la nube</div>
+                        <div>Pago mensual</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- MISION Y VISION SECTION -->
-    <section class="mision-vision" id="mision">
+    <section class="mision-vision fondo-foto" id="mision">
         <div class="container">
             <div class="mv-grid">
                 <div class="mv-card">
@@ -212,22 +217,22 @@
             <p class="soporte-text">Escríbenos, llámanos o mándanos un correo. Las alertas de tus sensores llegan solas, a cualquier hora.</p>
             <div class="soporte-grid">
                 <a class="soporte-card" href="https://wa.me/573246526040?text=Hola%2C%20necesito%20ayuda%20con%20IoT%20Link." target="_blank" rel="noopener">
-                    <div class="soporte-icon">💬</div>
+                    <div class="soporte-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-chat"/></svg></div>
                     <h3>WhatsApp</h3>
                     <p>+57 324 652 6040</p>
                 </a>
                 <div class="soporte-card">
-                    <div class="soporte-icon">📧</div>
+                    <div class="soporte-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-correo"/></svg></div>
                     <h3>Email</h3>
                     <p><a href="mailto:contacto@iotlink.com.co">contacto@iotlink.com.co</a><br><a href="mailto:proyectos@iotlink.com.co">proyectos@iotlink.com.co</a></p>
                 </div>
                 <a class="soporte-card" href="tel:+573246526040">
-                    <div class="soporte-icon">☎️</div>
+                    <div class="soporte-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-telefono"/></svg></div>
                     <h3>Teléfono</h3>
                     <p>+57 324 652 6040</p>
                 </a>
                 <a class="soporte-card" href="/faq">
-                    <div class="soporte-icon">❓</div>
+                    <div class="soporte-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-ayuda"/></svg></div>
                     <h3>Preguntas frecuentes</h3>
                     <p>Respuestas a las dudas más comunes</p>
                 </a>
@@ -241,22 +246,22 @@
             <h2 style="font-size: 42px; font-weight: 700; margin-bottom: 60px; text-align: center; color: #2C3E50;">Seguridad y confianza</h2>
             <div class="trust-grid">
                 <div style="text-align: center;">
-                    <div class="trust-icon trust-lock">🔒</div>
+                    <div class="trust-icon trust-lock" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-candado"/></svg></div>
                     <h3 style="color: #2C3E50; font-weight: 600; margin-bottom: 10px;">Conexión cifrada</h3>
                     <p style="color: #555; font-size: 14px;">HTTPS/TLS</p>
                 </div>
                 <div style="text-align: center;">
-                    <div class="trust-icon trust-uptime">👥</div>
+                    <div class="trust-icon trust-uptime" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-usuarios"/></svg></div>
                     <h3 style="color: #2C3E50; font-weight: 600; margin-bottom: 10px;">Acceso por roles</h3>
                     <p style="color: #555; font-size: 14px;">Cada usuario ve solo lo suyo</p>
                 </div>
                 <div style="text-align: center;">
-                    <div class="trust-icon trust-legal">⚖️</div>
+                    <div class="trust-icon trust-legal" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-balanza"/></svg></div>
                     <h3 style="color: #2C3E50; font-weight: 600; margin-bottom: 10px;">Ley 1581</h3>
                     <p style="color: #555; font-size: 14px;">Tratamiento de datos en Colombia</p>
                 </div>
                 <div style="text-align: center;">
-                    <div class="trust-icon trust-audit">📄</div>
+                    <div class="trust-icon trust-audit" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-documento"/></svg></div>
                     <h3 style="color: #2C3E50; font-weight: 600; margin-bottom: 10px;">Reportes</h3>
                     <p style="color: #555; font-size: 14px;">Historial descargable</p>
                 </div>
@@ -267,23 +272,15 @@
         </div>
     </section>
 
-    <!-- MAPA SECTION -->
+    <!-- UBICACION (sin iframe de Google Maps: así la página no pone cookies de terceros) -->
     <section class="mapa-section" id="contacto">
         <div class="container" style="margin-bottom: 30px;">
-            <h2 style="font-size: 32px; color: #2C3E50; margin-bottom: 20px; text-align: center;">Ubicación</h2>
-            <p style="text-align: center; color: #555; margin-bottom: 20px;">Estamos ubicados en Medellín, Colombia.</p>
-        </div>
-        <div class="mapa-container">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127382.07091332103!2d-75.63432469726562!3d6.244203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4428dfb80fad05%3A0x42137cfcc7b53b56!2sMedell%C3%ADn%2C%20Antioquia%2C%20Colombia!5e0!3m2!1ses!2s!4v1234567890123!5m2!1ses!2s"
-                width="100%"
-                height="450"
-                style="border:0;"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="Mapa de Medellín, Colombia">
-            </iframe>
+            <h2 style="font-size: 32px; color: #2C3E50; margin-bottom: 20px; text-align: center; padding-top: 50px;">Ubicación</h2>
+            <div class="ubicacion-box">
+                <div class="ubicacion-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-gps"/></svg></div>
+                <p>Estamos ubicados en Medellín, Antioquia, Colombia.</p>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Medell%C3%ADn%2C%20Antioquia%2C%20Colombia" class="btn-cta" target="_blank" rel="noopener">Ver en Google Maps</a>
+            </div>
         </div>
     </section>
 

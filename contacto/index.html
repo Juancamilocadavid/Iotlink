@@ -29,7 +29,7 @@
         .form-group { margin-bottom: 24px; }
         .form-group label { display: block; font-weight: 600; color: #2C3E50; margin-bottom: 8px; font-size: 14px; }
         .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; font-family: inherit; transition: all 0.3s ease; }
-        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #20A4FF; box-shadow: 0 0 0 3px rgba(32,164,255,0.1); }
+        .form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: #0B6FB8; box-shadow: 0 0 0 3px rgba(11,111,184,0.15); }
         .form-group textarea { resize: vertical; min-height: 120px; }
         .form-submit { background: linear-gradient(135deg, #2C3E50 0%, #34495E 100%); color: white; border: none; padding: 14px 36px; border-radius: 8px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; width: 100%; font-size: 15px; }
         .form-submit:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(44, 62, 80, 0.3); }
@@ -39,11 +39,14 @@
         .info-card-icon { font-size: 32px; margin-bottom: 12px; }
         .info-card h3 { font-size: 18px; color: #2C3E50; margin-bottom: 8px; font-weight: 600; }
         .info-card p { color: #555; line-height: 1.6; }
-        .info-card a { color: #20A4FF; text-decoration: none; font-weight: 600; }
+        .info-card a { color: #0B6FB8; text-decoration: none; font-weight: 600; }
         .info-card a:hover { text-decoration: underline; }
         .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; }
         .form-row .form-group { margin-bottom: 0; }
+        .form-consent { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; color: #444; line-height: 1.5; margin-bottom: 24px; }
+        .form-consent input { width: 18px; height: 18px; margin-top: 2px; flex: none; accent-color: #2C3E50; }
+        .form-consent a { color: #0B6FB8; font-weight: 600; }
 
         /* Responsive */
         @media (max-width: 768px) {
@@ -134,9 +137,14 @@
                             <textarea id="message" name="message" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
                         </div>
 
+                        <div class="form-consent">
+                            <input type="checkbox" id="autorizacion" name="autorizacion" value="si" required>
+                            <label for="autorizacion">Autorizo a IoT Link a tratar mis datos personales para responder esta solicitud, según su <a href="/datos" target="_blank" rel="noopener">Política de Tratamiento de Datos</a> (Ley 1581 de 2012). *</label>
+                        </div>
+
                         <button type="submit" class="form-submit" id="submitBtn">Enviar Mensaje</button>
-                        <p style="font-size: 12px; color: #888; margin-top: 16px; text-align: center;">
-                            Al enviar, aceptas nuestras <a href="/privacidad" style="color: #20A4FF;">políticas de privacidad</a>
+                        <p style="font-size: 12px; color: #595959; margin-top: 16px; text-align: center;">
+                            El formulario se envía a través de Google (Google Apps Script). Solo usamos tus datos para responderte.
                         </p>
                     </form>
                 </div>
@@ -144,24 +152,24 @@
                 <!-- INFORMACIÓN DE CONTACTO -->
                 <div class="contact-info">
                     <div class="info-card">
-                        <div class="info-card-icon">📧</div>
+                        <div class="info-card-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-correo"/></svg></div>
                         <h3>Email</h3>
                         <p><strong>General:</strong><br><a href="mailto:contacto@iotlink.com.co">contacto@iotlink.com.co</a></p>
                         <p><strong>Proyectos:</strong><br><a href="mailto:proyectos@iotlink.com.co">proyectos@iotlink.com.co</a></p>
                     </div>
                     <div class="info-card">
-                        <div class="info-card-icon">📍</div>
+                        <div class="info-card-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-gps"/></svg></div>
                         <h3>Ubicación</h3>
                         <p>Medellín, Antioquia<br>Colombia</p>
                     </div>
                     <div class="info-card">
-                        <div class="info-card-icon">💬</div>
+                        <div class="info-card-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-chat"/></svg></div>
                         <h3>WhatsApp y teléfono</h3>
                         <p><strong>WhatsApp:</strong><br><a href="https://wa.me/573246526040?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20IoT%20Link." target="_blank" rel="noopener">+57 324 652 6040</a></p>
                         <p><strong>Teléfono:</strong><br><a href="tel:+573246526040">+57 324 652 6040</a></p>
                     </div>
                     <div class="info-card">
-                        <div class="info-card-icon">🌐</div>
+                        <div class="info-card-icon" aria-hidden="true"><svg class="icono"><use href="/imagenes/iconos.svg#i-enlace"/></svg></div>
                         <h3>Enlaces Útiles</h3>
                         <p><a href="/faq">Preguntas Frecuentes →</a></p>
                     </div>
@@ -207,7 +215,9 @@
                 company: document.getElementById('company').value,
                 phone:   document.getElementById('phone').value,
                 subject: document.getElementById('subject').value,
-                message: document.getElementById('message').value
+                message: document.getElementById('message').value,
+                autorizacion: document.getElementById('autorizacion').checked ? 'si' : 'no',
+                autorizacion_fecha: new Date().toISOString()
             };
 
             try {

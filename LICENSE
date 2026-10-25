@@ -1,0 +1,19 @@
+Copyright (c) 2026 IoT Link S.A.S. Todos los derechos reservados.
+
+El código, los textos, el logo y el diseño de este sitio (iotlink.com.co)
+son propiedad de IoT Link. Que el repositorio sea público no concede
+permiso para copiarlos, modificarlos ni redistribuirlos.
+
+Contenido de terceros:
+- imagenes/vista2.jpg: imagen de Freepik (https://www.freepik.es),
+  usada bajo la licencia de Freepik, con el crédito que aparece en el pie
+  de página del sitio.
+- ThingsBoard es una marca de sus respectivos dueños.
+- imagenes/iconos.svg: íconos basados en Lucide (https://lucide.dev),
+  licencia ISC.
+- imagenes/fondos/*.jpg: fotos de Unsplash (https://unsplash.com/license),
+  difuminadas para el fondo de las secciones:
+    soluciones.jpg  Robin Glauser       https://unsplash.com/photos/zP7X_B86xOg
+    sectores.jpg    Brayden Prato       https://unsplash.com/photos/If5vloAJSBQ
+    nosotros.jpg    Juliana Morales R.  https://unsplash.com/photos/PMYCnEgvPK0
+    mision.jpg      Vida Huang          https://unsplash.com/photos/I-_wYj9yOzw

@@ -125,6 +125,7 @@
             '</div>' +
             '<div class="footer-bottom">' +
                 '<p>&copy; 2026 IoT Link. Todos los derechos reservados.</p>' +
+                '<p class="footer-creditos">Imagen de fondo: <a href="https://www.freepik.es" target="_blank" rel="noopener">Freepik</a></p>' +
             '</div>' +
         '</div>' +
         '</footer>';
@@ -140,11 +141,11 @@
     if (WHATSAPP) {
         var waTexto = document.body.dataset.wa || 'Hola, me interesa una demo de IoT Link.';
         floatHref = 'https://wa.me/' + WHATSAPP + '?text=' + encodeURIComponent(waTexto);
-        floatIcon = '💬';
+        floatIcon = '<svg class="icono"><use href="/imagenes/iconos.svg#i-chat"/></svg>';
         floatLabel = 'WhatsApp';
     } else {
         floatHref = '/contacto';
-        floatIcon = '💬';
+        floatIcon = '<svg class="icono"><use href="/imagenes/iconos.svg#i-chat"/></svg>';
         floatLabel = 'Escríbenos';
     }
     var fab = document.createElement('a');
@@ -152,7 +153,7 @@
     fab.href = floatHref;
     if (WHATSAPP) { fab.target = '_blank'; fab.rel = 'noopener'; }
     fab.setAttribute('aria-label', floatLabel);
-    fab.innerHTML = '<span class="float-icon">' + floatIcon + '</span>' +
+    fab.innerHTML = '<span class="float-icon" aria-hidden="true">' + floatIcon + '</span>' +
                     '<span class="float-label">' + floatLabel + '</span>';
     document.body.appendChild(fab);
 
