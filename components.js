@@ -125,7 +125,6 @@
             '</div>' +
             '<div class="footer-bottom">' +
                 '<p>&copy; 2026 IoT Link. Todos los derechos reservados.</p>' +
-                '<p class="footer-creditos">Imagen de fondo: <a href="https://www.freepik.es" target="_blank" rel="noopener">Freepik</a></p>' +
             '</div>' +
         '</div>' +
         '</footer>';
